@@ -29,3 +29,8 @@ steps:
     versioningScheme: byEnvVar
     versionEnvVar: PackVersion
     #verbosityRestore: 'detailed' # Options: quiet, minimal, normal, detailed, diagnostic
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: drop
