@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>.NET Standard Library based on ZXing.NET project that produce in memory BMP images of generated barcodes</Description>
+    <Copyright>(c) 2019 Nicolò Carandini</Copyright>
+    <PackageLicenseUrl>https://github.com/ncarandini/Barcode.Generator/blob/release/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/ncarandini/Barcode.Generator</PackageProjectUrl>
+    <PackageTags>barcode, .NET</PackageTags>
+    <Authors>Nicolò Carandini</Authors>
+    <Company>TPCWare</Company>
   </PropertyGroup>
 
 </Project>

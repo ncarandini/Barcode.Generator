@@ -11,6 +11,7 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  PackVersion: '1.0.0'
 
 steps:
 
@@ -21,3 +22,9 @@ steps:
     command: 'restore'
     projects: '**/Barcode.Generator.csproj'
     #verbosityRestore: 'detailed' # Options: quiet, minimal, normal, detailed, diagnostic
+
+- task: NuGetCommand@2
+  inputs:
+    command: pack
+    versioningScheme: byEnvVar
+    versionEnvVar: PackVersion

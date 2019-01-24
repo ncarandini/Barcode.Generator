@@ -5,7 +5,12 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Barcode.Generator", "Barcode.Generator\Barcode.Generator.csproj", "{E44649D2-52F6-4423-A9D7-9083BE3179A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Console", "Demo.Console\Demo.Console.csproj", "{4C5514A4-03F2-4F3C-B92C-61FD35551B8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Console", "Demo.Console\Demo.Console.csproj", "{4C5514A4-03F2-4F3C-B92C-61FD35551B8D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{546DFC8C-3FE0-49A7-86C0-AF5202A93A34}"
+	ProjectSection(SolutionItems) = preProject
+		..\azure-pipelines.yml = ..\azure-pipelines.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
