@@ -10,7 +10,6 @@ pool:
   vmImage: 'vs2017-win2016'
 
 variables:
-  buildConfiguration: 'Release'
   PackVersion: '1.0.0'
 
 steps:
@@ -21,11 +20,11 @@ steps:
     projects: '**/Barcode.Generator.csproj'
     #verbosityRestore: 'detailed' # Options: quiet, minimal, normal, detailed, diagnostic
 
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
   inputs:
     command: pack
+    configuration: 'release'
     packagesToPack: '**/Barcode.Generator.csproj'
-    configuration: '$(BuildConfiguration)'
     packDestination: '$(Build.ArtifactStagingDirectory)'
     versioningScheme: byEnvVar
     versionEnvVar: PackVersion
