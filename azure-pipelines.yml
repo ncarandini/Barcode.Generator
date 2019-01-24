@@ -15,8 +15,6 @@ variables:
 
 steps:
 
-# .NET Core
-# Restore NuGet packages.
 - task: DotNetCoreCLI@2
   inputs:
     command: 'restore'
@@ -26,5 +24,9 @@ steps:
 - task: NuGetCommand@2
   inputs:
     command: pack
+    packagesToPack: '**/Barcode.Generator.csproj'
+    configuration: '$(BuildConfiguration)'
+    packDestination: '$(Build.ArtifactStagingDirectory)'
     versioningScheme: byEnvVar
     versionEnvVar: PackVersion
+    #verbosityRestore: 'detailed' # Options: quiet, minimal, normal, detailed, diagnostic
