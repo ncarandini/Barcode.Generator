@@ -1,0 +1,31 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- release
+
+pool:
+  vmImage: 'vs2017-win2016'
+
+variables:
+  PackVersion: '1.0.0'
+
+steps:
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: '**/Barcode.Generator.csproj'
+    #verbosityRestore: 'detailed' # Options: quiet, minimal, normal, detailed, diagnostic
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: pack
+    configuration: 'release'
+    packagesToPack: '**/Barcode.Generator.csproj'
+    packDestination: '$(Build.ArtifactStagingDirectory)'
+    versioningScheme: byEnvVar
+    versionEnvVar: PackVersion
+    #verbosityRestore: 'detailed' # Options: quiet, minimal, normal, detailed, diagnostic
